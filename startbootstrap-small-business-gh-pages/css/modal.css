@@ -1,0 +1,16 @@
+.custom-close {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.new-article-field-wrapper span {
+    display: block;
+}
+.new-article-field-wrapper input {
+    width: 100%;
+    padding-left: 7px;
+}
+.modal-footer button{
+    width: 100%;
+}

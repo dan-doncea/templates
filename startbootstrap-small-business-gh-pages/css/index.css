@@ -4,3 +4,46 @@ body {
     background-attachment: fixed;
     background-position: center; 
 }
+.custom-current-artice-wrapper > h1,
+.custom-current-artice-wrapper > p1 {
+    word-wrap: break-word;
+}
+.custom-current-artice-wrapper img {
+    width: 100%;
+    height: 265px;
+}
+.custom-current-artice p {
+    margin-bottom: 0;
+}
+.col-lg-12 {
+    padding-top: 15px;
+    color: #fff;
+}
+.custom-card-title {
+ position: relative;
+ top: 3px;
+ z-index: 1;
+}
+.custom-card-body {
+    position: relative;
+}
+.action-edit-icon, .action-delete-icon {
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+.action-edit-icon {
+    right: 35px;
+}
+.action-delete-icon {
+    right: 10px;
+}
+.new-article-status {
+    position: relative;
+    top: -5px;
+    text-align: center;
+    font-size: 22px;
+}

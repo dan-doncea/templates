@@ -12,19 +12,18 @@ document.querySelector("#password").oninput = (event) => {
 };
 
 document.getElementById("submit").addEventListener("click", () => {
-    const xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-    xmlhttp.withCredentials = true;
-    xmlhttp.open("POST", "/json-handler");
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xmlhttp.send(JSON.stringify({ "username": state.username, "password": state.password }));
+    fetch("http://192.168.100.2:8080/login", {
+        method : "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(state)
+    }).then(response => {
+        return response.json();
+    }).then(({token}) => {
+        localStorage.setItem("token", token);
+        window.location.href = "index.html";
+    }).catch(err => {
+        console.log(err.status);
+    });
 });
-
-// xhr.open('POST', 'http://192.168.100.2:8080/login');
-// xhr.send();
-// xhr.onload = function() {
-//   if (xhr.status != 200) { 
-//     alert(xhr.status + ': ' + xhr.statusText); 
-//   } else {
-//     alert(xhr.responseText);
-//   }
-// };
